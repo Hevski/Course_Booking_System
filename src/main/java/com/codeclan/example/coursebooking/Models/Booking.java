@@ -12,8 +12,8 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "booking")
-    private String booking;
+    @Column(name = "date")
+    private String date;
 
     @JsonIgnoreProperties("bookings")
     @ManyToOne
@@ -24,8 +24,8 @@ public class Booking {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    public Booking(String booking, Course course, Customer customer) {
-        this.booking = booking;
+    public Booking(String date, Course course, Customer customer) {
+        this.date = date;
         this.course = course;
         this.customer = customer;
     }
@@ -41,12 +41,12 @@ public class Booking {
         this.id = id;
     }
 
-    public String getBooking() {
-        return booking;
+    public String getDate() {
+        return date;
     }
 
-    public void setBooking(String booking) {
-        this.booking = booking;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public Course getCourse() {
@@ -64,4 +64,5 @@ public class Booking {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
 }

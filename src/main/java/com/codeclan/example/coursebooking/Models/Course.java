@@ -77,5 +77,9 @@ public class Course {
         this.id = id;
     }
 
+    public void addBooking(Booking booking){
+        this.bookings.add(booking);
+    }
+
 
 }
